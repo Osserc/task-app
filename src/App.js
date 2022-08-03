@@ -25,7 +25,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className='form'>
+        <div className='form tr'>
           <form onSubmit={this.addTask}>
             <h1>New task</h1>
             <label htmlFor='task'>Task name</label>
