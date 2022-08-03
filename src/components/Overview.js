@@ -8,7 +8,6 @@ class Overview extends Component {
     render() {
         return(
             <div>
-                {console.log(this.props.tasks)}
                 {this.props.tasks.map((task, index) => {
                     return <div key={index}>{task}</div>
                 })}

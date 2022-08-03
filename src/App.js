@@ -7,10 +7,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      tasks: ['Mow lawn',
-              'Clip cat\'s claws',
-              'Make chicharrones',
-              'Defrost snake']
+      tasks: []
     }
 
     this.addTask = this.addTask.bind(this)
@@ -18,14 +15,11 @@ class App extends React.Component {
 
   addTask(event) {
     event.preventDefault()
+    // console.log(event.target.querySelector('#task').value)
     this.setState({
         tasks: this.state.tasks.concat(event.target.elements.task.value)
     })
-  }
-
-  sendData(event) {
-    event.preventDefault()
-    Overview.addTask(event.target.elements.task.value)
+    event.target.querySelector('#task').value = ''
   }
 
   render() {
@@ -35,7 +29,7 @@ class App extends React.Component {
           <form onSubmit={this.addTask}>
             <h1>New task</h1>
             <label htmlFor='task'>Task name</label>
-            <input type='text' id='task' name='task'></input>
+            <input type='text' id='task' name='task' required></input>
             <button type='submit'>Add task</button>
           </form>
         </div>
