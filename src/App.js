@@ -24,9 +24,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className='form tr'>
-          <form onSubmit={this.addTask}>
+      <div className='top-container flex flex-c justify-center align-center'>
+        <div className='top-container flex just-center align-center'>
+          <form onSubmit={this.addTask} className='flex flex-c just-center align-center'>
             <h1>New task</h1>
             <label htmlFor='task'>Task name</label>
             <input type='text' id='task' name='task' required></input>
